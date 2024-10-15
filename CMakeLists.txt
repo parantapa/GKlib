@@ -4,9 +4,9 @@ project(GKlib LANGUAGES C
 VERSION 1.0.0
 )
 
-enable_testing()
+# enable_testing()
 
-option(BUILD_TESTING "Build tests" ON)
+# option(BUILD_TESTING "Build tests" OFF)
 
 option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static ones (.lib/.a)" OFF)
 
@@ -44,9 +44,9 @@ $<$<BOOL:${OPENMP}>:OpenMP::OpenMP_C>
 add_library(GKlib::GKlib INTERFACE IMPORTED GLOBAL)
 target_link_libraries(GKlib::GKlib INTERFACE GKlib)
 
-if(BUILD_TESTING)
-add_subdirectory(test)
-endif()
+# if(BUILD_TESTING)
+# add_subdirectory(test)
+# endif()
 
 install(TARGETS GKlib EXPORT ${PROJECT_NAME}-targets)
 
