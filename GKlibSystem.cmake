@@ -3,7 +3,7 @@ include(CheckFunctionExists)
 include(CheckIncludeFile)
 
 # Setup options.
-option(OPENMP "enable OpenMP support" OFF)
+option(OPENMP "enable OpenMP support" ON)
 option(PCRE "enable PCRE support" OFF)
 option(GKREGEX "enable GKREGEX support" OFF)
 option(GKRAND "enable GKRAND support" OFF)
@@ -23,7 +23,7 @@ if(CYGWIN)
 endif()
 
 if(CMAKE_C_COMPILER_ID STREQUAL "GNU")
-  list(APPEND GKlib_COPTS -fno-strict-aliasing -Werror -Wall -pedantic -Wno-unused-function -Wno-unused-but-set-variable -Wno-unused-variable -Wno-unknown-pragmas -Wno-unused-label)
+  list(APPEND GKlib_COPTS -D_POSIX_C_SOURCE=199309L -fno-strict-aliasing -Werror -Wall -pedantic -Wno-unused-function -Wno-unused-but-set-variable -Wno-unused-variable -Wno-unknown-pragmas -Wno-unused-label)
 endif()
 
 if(UNIX)

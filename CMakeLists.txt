@@ -6,7 +6,7 @@ VERSION 1.0.0
 
 enable_testing()
 
-option(BUILD_TESTING "Build tests" ON)
+option(BUILD_TESTING "Build tests" OFF)
 
 option(BUILD_SHARED_LIBS "Build shared libraries (.dll/.so) instead of static ones (.lib/.a)" OFF)
 
